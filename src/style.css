@@ -78,18 +78,49 @@ body{
     -webkit-text-fill-color: transparent;  
 }
 
-.btn{
-    padding: 20px 40px;
-    color: azure;
-    background: linear-gradient(270deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);
-    border: 0;
-    cursor: pointer;
-    border-radius: 30px;
-    margin-top: 30px;
-    font-weight: 700;
-    font-size: 1.2em;
+.main>h1>span{
+    width: 33%;
+    text-align: center;
+    display: inline-block;
 }
 
-.btn:hover{
-    background: linear-gradient(90deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);
+.btn-wrapper{
+    width: 300px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-wrapper>button{
+    width: 95px;
+    padding: 10px;
+    color: whitesmoke;
+    border: 0;
+    border-radius: 20px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.start{
+    background-color: dodgerblue;
+}
+
+.start:hover{
+    background-color: rgb(0, 83, 165);
+}
+
+.stop{
+    background-color: salmon;
+}
+
+.stop:hover{
+    background-color: rgb(255, 58, 36);
+}
+
+.reset{
+    background-color: gray;
+}
+
+.reset:hover{
+    background-color: rgb(63, 63, 63);
 }
