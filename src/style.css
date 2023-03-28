@@ -89,14 +89,15 @@ body{
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .btn-wrapper>button{
     width: 95px;
-    padding: 10px;
+    padding: 15px;
     color: whitesmoke;
     border: 0;
-    border-radius: 20px;
+    border-radius: 30px;
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
@@ -123,4 +124,16 @@ body{
 
 .reset:hover{
     background-color: rgb(63, 63, 63);
+}
+
+.change{
+    width: 100% !important;
+    margin-top: 15px;
+    border-radius: 50px !important;
+    background: linear-gradient(234deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);
+    font-size: large;
+}
+
+.change:hover{
+    background: linear-gradient(100deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);    
 }
