@@ -15,7 +15,7 @@ body{
 }
 
 .main-border{
-    width: 300px;
+    width: 400px;
     background: linear-gradient(270deg, #2637AF 0%, #863496 20%, #E5317D 40%, #F25B58 60%, #F1A054 80%, #F1D774 100%);
     position: relative;
     padding: 3px;
@@ -66,4 +66,44 @@ body{
     background: -webkit-linear-gradient(90deg, #2637AF 0%, #863496 20%, #E5317D 40%, #F25B58 60%, #F1A054 80%, #F1D774 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
+}
+
+.btn-holder{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.btn-holder>button{
+    width: 130px;
+    padding: 15px 0;
+    border: 0;
+    border-radius: 30px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.reset{
+    background: -webkit-linear-gradient(90deg, #292929 0%, #7A7A7A 100%);
+}
+
+.reset:hover{
+    background: -webkit-linear-gradient(270deg, #292929 0%, #7A7A7A 100%);
+}
+
+.start{
+    background: -webkit-linear-gradient(90deg, #003E5C 0%, #007BB8 100%);
+}
+
+.start:hover{
+    background: -webkit-linear-gradient(270deg,  #003E5C 0%, #007BB8 100%);
+}
+
+.stop{
+    background: -webkit-linear-gradient(90deg, #DC1C13 0%, #F07470 100%);
+}
+
+.stop:hover{
+    background: -webkit-linear-gradient(270deg,  #DC1C13 0%, #F07470 100%);
 }

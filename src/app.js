@@ -7,11 +7,7 @@ class App extends React.Component {
     render() {
         return (
             <div className='container'>
-                <div className='main-border'>
-                    <div className='main'>
-                        <Timer />
-                    </div>
-                </div>
+                <Timer/>
             </div>
         )
     }
