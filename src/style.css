@@ -14,19 +14,9 @@ body{
     flex-direction: column;
 }
 
-.title{
-    color: #000;
-    font-size: 3em;
-    background: -webkit-linear-gradient(270deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(2px 2px #333);
-  
-}
-
 .main-border{
     width: 300px;
-    background: linear-gradient(270deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);
+    background: linear-gradient(270deg, #2637AF 0%, #863496 20%, #E5317D 40%, #F25B58 60%, #F1A054 80%, #F1D774 100%);
     position: relative;
     padding: 3px;
     margin-top: 30px;
@@ -41,7 +31,7 @@ body{
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(270deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);
+    background: linear-gradient(270deg, #2637AF 0%, #863496 20%, #E5317D 40%, #F25B58 60%, #F1A054 80%, #F1D774 100%);
     transform: translate3d(0px 7px 29px 0px) scale(0.95);
     filter: blur(20px);
     opacity: var(0.7);
@@ -73,7 +63,7 @@ body{
     padding: 0;
     margin: 0;
     font-size: 3em;
-    background: -webkit-linear-gradient(234deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);
+    background: -webkit-linear-gradient(90deg, #2637AF 0%, #863496 20%, #E5317D 40%, #F25B58 60%, #F1A054 80%, #F1D774 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
 }

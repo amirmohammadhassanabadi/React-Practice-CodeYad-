@@ -2,37 +2,38 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 var interval;
+let userNum;
+do {
+    userNum = Number(prompt("Please enter a Natural(positive integers) number"));
+} while (isNaN(userNum) == true && Number(userNum) <= 0);
 
 class Timer extends React.Component {
-    constructor() {
+    constructor(){
         super();
         this.state = {
-            Time: new Date().toLocaleTimeString()
+            Num: userNum
         }
     }
 
-    componentDidMount() {
-        console.log("componentDidMount");
-        interval = setInterval(() => {
+    componentDidMount(){
+        interval = setInterval(()=>{
+            userNum--;
             this.setState({
-                Time: new Date().toLocaleTimeString()
+                Num: userNum
             })
         }, 1000)
     }
 
-    componentDidUpdate() {
-        console.log("componentDidUpdate");
+    componentDidUpdate(){
+        if(userNum == 0){
+            clearInterval(interval)
+        }
     }
-
-    componentWillUnmount() {
-
-    }
-
+    
     render() {
-        console.log("render");
         return (
-            <h1>
-                {this.state.Time}
+            <h1 id='show'>
+                {this.state.Num}
             </h1>
         )
     }
