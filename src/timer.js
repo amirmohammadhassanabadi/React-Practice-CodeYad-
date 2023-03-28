@@ -7,29 +7,26 @@ class Timer extends React.Component {
     constructor() {
         super();
         this.state = {
-            Time: new Date().toLocaleTimeString()
+            Time: 100
         }
     }
 
     componentDidMount() {
-        console.log("componentDidMount");
         interval = setInterval(() => {
             this.setState({
-                Time: new Date().toLocaleTimeString()
+                Time: this.state.Time - 1
             })
         }, 1000)
     }
 
     componentDidUpdate() {
-        console.log("componentDidUpdate");
+        if(this.state.Time == 0){
+            clearInterval(interval);
+        }
     }
 
-    componentWillUnmount() {
-
-    }
 
     render() {
-        console.log("render");
         return (
             <h1>
                 {this.state.Time}

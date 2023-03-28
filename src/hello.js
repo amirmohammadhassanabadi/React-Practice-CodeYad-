@@ -6,7 +6,7 @@ class Hello extends React.Component {
     render() {
         return (
             <h1 className='title'>
-                Digital Clock
+                {this.props.Title}
             </h1>
         )
     }

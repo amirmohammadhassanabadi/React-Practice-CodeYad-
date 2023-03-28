@@ -77,3 +77,19 @@ body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
 }
+
+.btn{
+    padding: 20px 40px;
+    color: azure;
+    background: linear-gradient(270deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);
+    border: 0;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.btn:hover{
+    background: linear-gradient(90deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);
+}
