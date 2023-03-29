@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { TestContext } from './testContext';
 import TimeList from './timelist';
 
 var interval;
@@ -14,6 +15,8 @@ class Timer extends React.Component {
             isStarted: false
         }
     }
+
+    static contextType = TestContext;
 
     startBTN = ()=>{
         if(this.state.isStarted === false){
@@ -66,7 +69,7 @@ class Timer extends React.Component {
         let m = this.state.min;
         let s = this.state.sec;
         let newTime = `${`${h > 9 ? h: "0" + h} : ${m > 9 ? m: "0" + m} : ${s > 9 ? s: "0" + s}`}`
-        this.props.setTimeArr([...this.props.timeArr, newTime]);
+        this.context.setTimeArr([...this.context.timeArr, newTime]);
     }
 
     render() {
@@ -77,7 +80,7 @@ class Timer extends React.Component {
             <>
             <div className='main-border' onClick={this.saveTimeHandler}>
                 <div className='main'>
-                    <h1>
+                    <h1 style={{color: this.context.color}}>
                         <span>{`${h > 9 ? h: "0" + h}`}</span>
                         <span>{`${m > 9 ? m: "0" + m}`}</span>
                         <span>{`${s > 9 ? s: "0" + s}`}</span>
@@ -89,14 +92,14 @@ class Timer extends React.Component {
                 <button className='stop' onClick={this.stopBTN}>Stop</button>
                 <button className='reset' onClick={this.resetBTN}>Reset</button>
                 <button className='change' onClick={this.props.bgHandler} style={{
-                    background: this.props.isBgLight ? "#000" : "#fff",
+                    background: this.props.isBgLight ? "#000" : this.context.color,
                     color: this.props.isBgLight ? "#fff" : "#000"
                 }}>
                     {this.props.isBgLight ? "Dark" : "Light"}
                     </button>
             </div>
             <TimeList>
-                {this.props.timeArr}
+                {this.context.timeArr}
             </TimeList>
             </>
         )
