@@ -1,32 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Hello from './hello';
 import Timer from './timer';
 import './style.css'
 
-// class App extends React.Component {
-//     render() {
-//         return (
-//             <div className='container'>
-//                 <Hello/>
-//                 <Timer/>
-//             </div>
-//         )
-//     }
-// }
-
-
 const App = () => {
     const [title, setTitle] = useState('Timer');
+    const [isBgLight, setBgLight] = useState(false);
 
-    const titleHandler = () => {
-        setTitle("React Course");
+    useEffect(()=>{
+        console.log("use Effect");
+        // return ()=>{
+        //     console.log("end");
+        // }
+    }, [isBgLight])
+
+    const bgHandler = () => {
+        setBgLight(!isBgLight);
     }
 
     return (
-        <div className='container'>
-            <Hello title={title}/>
-            <Timer titleHandler={titleHandler}/>
+        <div className='container' style={{background: isBgLight ?  "#fff" : "#000"}}>
+            <Hello title={title} />
+            <Timer isBgLight={isBgLight} bgHandler={bgHandler} />
         </div>
     )
 }

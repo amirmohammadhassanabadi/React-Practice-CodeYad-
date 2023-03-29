@@ -80,7 +80,12 @@ class Timer extends React.Component {
                 <button className='start' onClick={this.startBTN}>Start</button>
                 <button className='stop' onClick={this.stopBTN}>Stop</button>
                 <button className='reset' onClick={this.resetBTN}>Reset</button>
-                <button className='change' onClick={this.props.titleHandler}>Change Title</button>
+                <button className='change' onClick={this.props.bgHandler} style={{
+                    background: this.props.isBgLight ? "#000" : "#fff",
+                    color: this.props.isBgLight ? "#fff" : "#000"
+                }}>
+                    {this.props.isBgLight ? "Dark" : "Light"}
+                    </button>
             </div>
             </>
         )
