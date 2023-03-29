@@ -132,3 +132,23 @@ body{
     border-radius: 50px !important;
     font-size: large;
 }
+
+.main-timelap{
+    margin-top: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.main-timelap>div{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: -webkit-linear-gradient(234deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);    font-size: large;
+    border-bottom: 1px solid #000;
+    font-size: large;
+    font-weight: 700;
+}
+
+.main-timelap>div:nth-child(even){
+    background: -webkit-linear-gradient(34deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);    font-size: large;
+}
