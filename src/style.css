@@ -30,6 +30,7 @@ body{
     position: relative;
     padding: 3px;
     margin-top: 30px;
+    cursor: pointer;
 }
 /* ------------------------------------------------- */
 
@@ -146,6 +147,7 @@ body{
     background: -webkit-linear-gradient(234deg, rgba(97,180,240,1) 0%, rgba(94,108,236,1) 50%, rgba(79,79,179,1) 100%);    font-size: large;
     border-bottom: 1px solid #000;
     font-size: large;
+    cursor: pointer;
     font-weight: 700;
 }
 
