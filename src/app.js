@@ -1,34 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Hello from './hello';
-import Timer from './timer';
-import TimeList from './timelist';
-import './style.css'
-import { TestContext } from './testContext';
+import TaskItem from './TaskItem';
+import TopForm from './TopForm';
+
 
 const App = () => {
-    const [title, setTitle] = useState('Timer');
-    const [isBgLight, setBgLight] = useState(false);
-    const [timeArr, setTimeArr] = useState([])
-
-    const bgHandler = () => {
-        setBgLight(!isBgLight);
-    }
-
     return (
-        <TestContext.Provider value={{
-            timeArr,
-            setTimeArr,
-            color: "#fff"
-        }}>
-            <div className='container' style={{ background: isBgLight ? "#fff" : "#000" }}>
-                <Hello title={title} />
-                <Timer
-                    isBgLight={isBgLight}
-                    bgHandler={bgHandler} />
-                    <TimeList/>
+        <div className='container  w-100 h-100 p-1 d-flex justify-content-center align-items-center'>
+            <div className='w-100 row justify-content-center align-items-start'>
+                <div className="col-12 col-md-8 col-lg-6 bg-dark shadow rounded-3 p-3 h_fit">
+                    <TopForm/>
+                    <TaskItem/>
+                </div>
             </div>
-        </TestContext.Provider>
+        </div>
+
+
     )
 }
 export default App
