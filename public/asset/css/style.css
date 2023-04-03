@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.page-background{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/wallpaper.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    width: 40%;
+    height: 45%;
+    background-color: rgba(16, 18, 27, .5);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.wrapper>h1{
+    margin: 30px;
+    color: whitesmoke;
+    font-size: 3em;
+    text-align: center;
+}
+
+.clock-wrapper{
+    width: 450px;
+    margin: 0 auto;
+    text-align: center ;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(16, 18, 27, .5);
+    padding: 15px 20px;
+    border: 2px solid whitesmoke;
+}
+
+.clock-wrapper>span{
+    font-size: 3.5em;
+    font-weight: 900;
+    color: whitesmoke;
+    width: 100%;
+}
+
+.wrapper>h2{
+    color: whitesmoke;
+    font-size: 2em;
+    font-weight: 200;
+}
+
+.wrapper>h2>b{
+    color: #61DAFB;
+    font-weight: 900;
+}
+/* linear-gradient(223deg, rgba(237,29,1,1) 0%, rgba(248,86,64,1) 14%, rgba(243,154,65,1) 28%, rgba(251,229,163,1) 42%, rgba(176,221,224,1) 56%, rgba(72,161,165,1) 70%, rgba(50,143,203,1) 85%, rgba(42,78,129,1) 100%) */

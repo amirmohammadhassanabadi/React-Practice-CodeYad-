@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import Hello from './hello';
-import Timer from './timer';
-import TimeList from './timeList';
-import './style.css'
-import { TestContext } from './testContext';
+import Timer from "./timer"
 
-const App = () => {
-    const [title, setTitle] = useState('Timer');
-    const [timeArr, setTimeArr] = useState([])
-
-    return (
-        <TestContext.Provider value={{
-            timeArr,
-            setTimeArr,
-            color: "#fff"
-        }}>
-            <div className='container'>
-                <Hello title={title} />
-                <Timer />
-                    <TimeList/>
+const App = ()=>{
+    return(
+        <div className="page-background">
+            <div className="wrapper">
+                <Timer/>
             </div>
-        </TestContext.Provider>
+        </div>
     )
 }
 export default App
