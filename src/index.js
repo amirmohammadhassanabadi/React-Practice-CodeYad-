@@ -2,16 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+class Hello extends React.Component {
+    render() {
+        return (
+            <h1>
+                Hello, World
+            </h1>
+        )
+    }
+}
+
+class Time extends React.Component {
+    render() {
+        return (
+            <span>
+                Your local time is <b>{new Date().toLocaleTimeString()}</b>
+            </span>
+        )
+    }
+}
+
 class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>
-                    Hello, World
-                </h1>
-                <span>
-                    Your local time is <b>{new Date().toLocaleTimeString()}</b>
-                </span>
+                <Hello/>
+                <Time/>
             </div>
         )
     }
@@ -20,7 +37,7 @@ class App extends React.Component {
 let element = new App()
 
 const Tick = () => {
-    root.render(element.render());
+    root.render(<App/>);
 }
 
 setInterval(() => {
