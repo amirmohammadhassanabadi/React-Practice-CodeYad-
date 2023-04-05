@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom/client';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,11 +14,22 @@ class Hello extends React.Component {
 }
 
 class Time extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            time: new Date().toLocaleTimeString()
+        }
+    }
     render() {
+        setInterval(() => {
+            this.setState({
+                time: new Date().toLocaleTimeString()
+            })
+        }, 1000)
         return (
-            <span>
-                Your local time is <b>{new Date().toLocaleTimeString()}</b>
-            </span>
+            <h1>
+                {this.state.time}
+            </h1>
         )
     }
 }
@@ -26,21 +37,15 @@ class Time extends React.Component {
 class App extends React.Component {
     render() {
         return (
-            <div>
-                <Hello/>
-                <Time/>
+            <div className='wrapper'>
+                <Hello />
+                <div className='clock'>
+                    <Time />
+                </div>
             </div>
         )
     }
 }
 
-let element = new App()
-
-const Tick = () => {
-    root.render(<App/>);
-}
-
-setInterval(() => {
-    Tick()
-}, 1000)
+root.render(<App />);
 // ===================================================
