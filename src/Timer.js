@@ -6,12 +6,12 @@ class Timer extends React.Component{
     constructor(){
         super();
         this.state = {
-            time: 100
+            time: 10
         }
     }
 
     componentDidMount(){
-        setInterval(()=>{
+        interval = setInterval(()=>{
             this.setState({
                     time: this.state.time - 1
             })
