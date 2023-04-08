@@ -37,3 +37,20 @@ div.clock h1{
     color: #148776;
     cursor: pointer;
 }
+
+.wrapper button{
+    padding: 10px 40px;
+    border: 0;
+    border-radius: 8px;
+    margin: 10px;
+    margin-top: 0;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.wrapper button:nth-child(1){
+    background-color: #148776;
+}
+.wrapper button:nth-child(2){
+    background-color: #212529;
+}

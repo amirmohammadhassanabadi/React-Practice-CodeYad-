@@ -10,19 +10,11 @@ class App extends React.Component {
         }
     }
 
-    titleHandler = ()=>{
-        this.setState({
-            title: "Hello, World"
-        })
-    }
-
     render() {
         return (
             <div className='wrapper'>
                 <Hello title={this.state.title}/>
-                <div className='clock'>
-                    <Timer titleHandler={this.titleHandler}/>
-                </div>
+                <Timer/>
             </div>
         );
     }
