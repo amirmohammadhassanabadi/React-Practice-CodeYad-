@@ -26,7 +26,7 @@ class Timer extends React.Component{
 
     render(){
         return(
-            <h1>
+            <h1 onClick={this.props.titleHandler}>
                 {this.state.time}
             </h1>
         )

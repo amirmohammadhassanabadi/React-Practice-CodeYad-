@@ -35,4 +35,5 @@ div.clock{
 
 div.clock h1{
     color: #148776;
+    cursor: pointer;
 }
