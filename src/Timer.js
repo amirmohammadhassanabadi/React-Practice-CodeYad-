@@ -6,25 +6,18 @@ class Timer extends React.Component {
     constructor() {
         super();
         this.state = {
-            time: 100,
+            sec: 0,
+            min: 0,
+            hr: 0,
             isStart: false
         }
-    }
-
-    componentDidMount() {
-        interval = setInterval(() => {
-            this.setState({
-                time: this.state.time - 1,
-                isStart: true
-            })
-        }, 1000)
     }
 
     startWatch = () => {
         if (this.state.isStart === false) {
             interval = setInterval(() => {
                 this.setState({
-                    time: this.state.time - 1,
+                    sec: this.state.sec + 1,
                     isStart: true
                 })
             }, 1000)
@@ -40,9 +33,26 @@ class Timer extends React.Component {
         }
     }
 
+    resetWatch = ()=>{
+        this.stopWatch();
+        this.setState({
+            sec: 0,
+            min: 0,
+            hr: 0
+        })
+    }
+
     componentDidUpdate() {
-        if (this.state.isStart == 0) {
-            clearInterval(interval);
+        if (this.state.sec === 60) {
+            this.setState({
+                sec: 0,
+                min: this.state.min + 1
+            })
+        }else if(this.state.min === 60){
+            this.setState({
+                min: 0,
+                hr: this.state.hr + 1
+            })
         }
     }
 
@@ -51,7 +61,7 @@ class Timer extends React.Component {
             <Fragment>
                 <div className='clock'>
                     <h1>
-                        {this.state.time}
+                        {`${this.state.hr > 9 ? this.state.hr: "0" + this.state.hr} : ${this.state.min > 9 ? this.state.min : "0" + this.state.min} : ${this.state.sec > 9 ? this.state.sec : "0" + this.state.sec}`}
                     </h1>
                 </div>
                 <div>
@@ -60,6 +70,9 @@ class Timer extends React.Component {
                     </button>
                     <button onClick={this.stopWatch}>
                         Stop
+                    </button>
+                    <button onClick={this.resetWatch}>
+                        Reset
                     </button>
                 </div>
             </Fragment>
