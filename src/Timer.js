@@ -74,6 +74,9 @@ class Timer extends React.Component {
                     <button onClick={this.resetWatch}>
                         Reset
                     </button>
+                    <button onClick={this.props.titleHandler}>
+                        Change Title
+                    </button>
                 </div>
             </Fragment>
         )
