@@ -74,8 +74,11 @@ class Timer extends React.Component {
                     <button onClick={this.resetWatch}>
                         Reset
                     </button>
-                    <button onClick={this.props.titleHandler}>
-                        Change Title
+                    <button onClick={this.props.themeHandler} style={{
+                        backgroundColor: this.props.isLight ? "#354047" : "whitesmoke",
+                        color: this.props.isLight ? "whitesmoke" : "#000"
+                    }}>
+                        {this.props.isLight ? "Dark Mode" : "Light Mode"}
                     </button>
                 </div>
             </Fragment>

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Hello from './Hello';
 import Timer from './Timer';
 
 const App = () => {
-    const [title, setTitle] = useState("Hello, World")
+    const [title, setTitle] = useState("Hello, World");
+    const [isLight, setLight] = useState(false);
 
     const titleHandler = () => {
         if (title == "React Course") {
@@ -13,42 +14,22 @@ const App = () => {
         }
     }
 
+    useEffect(()=>{
+        console.log("useEffect");
+    }, [isLight])
+
+    const themeHandler = ()=>{
+        setLight(!isLight);
+    }
+
     return (
-        <div className='wrapper'>
+        <div className='wrapper' style={{
+            backgroundColor: isLight ? "#c5c5c5": "#3f474b" 
+        }}>
             <Hello title={title} />
-            <Timer titleHandler={titleHandler} />
+            <Timer titleHandler={titleHandler} themeHandler={themeHandler} isLight={isLight}/>
         </div>
     )
 }
-
-// class App extends React.Component {
-//     constructor(){
-//         super();
-//         this.state = {
-//             title: "React Course",
-//         }
-//     }
-
-//     titleHandler = ()=>{
-//         if(this.state.title == "React Course"){
-//             this.setState({
-//                 title: "Hello, World",
-//             })
-//         }else{
-//             this.setState({
-//                 title: "React Course",
-//             })
-//         }
-//     }
-
-//     render() {
-//         return (
-//             <div className='wrapper'>
-//                 <Hello title={this.state.title}/>
-//                 <Timer titleHandler={this.titleHandler}/>
-//             </div>
-//         );
-//     }
-// }
 
 export default App;
