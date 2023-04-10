@@ -1,21 +1,45 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import TaskItem from './TaskItem';
-import TopForm from './TopForm';
-
+import React, { useEffect, useState } from 'react';
+import Hello from './Hello';
+import Timer from './Timer';
+import TimeList from './TimeList';
 
 const App = () => {
+    const [title, setTitle] = useState("Hello, World");
+    const [isLight, setLight] = useState(false);
+    const [timeArr, setTimeArr] = useState([]);
+
+    const timeListHandler = () => {
+        setTimeArr([... timeArr, document.querySelector(".clock").children[0].innerHTML])
+    }
+
+    const titleHandler = () => {
+        if (title == "React Course") {
+            setTitle("Hello, World")
+        } else {
+            setTitle("React Course")
+        }
+    }
+
+    const themeHandler = () => {
+        setLight(!isLight);
+    }
+
     return (
-        <div className='container  w-100 h-100 p-1 d-flex justify-content-center align-items-center'>
-            <div className='w-100 row justify-content-center align-items-start'>
-                <div className="col-12 col-md-8 col-lg-6 bg-dark shadow rounded-3 p-3 h_fit">
-                    <TopForm/>
-                    <TaskItem/>
-                </div>
-            </div>
+        <div className='wrapper' style={{
+            backgroundColor: isLight ? "#c5c5c5" : "#3f474b"
+        }}>
+            <Hello title={title} />
+            <Timer
+                titleHandler={titleHandler}
+                themeHandler={themeHandler}
+                isLight={isLight}
+                timeListHandler={timeListHandler}
+                />
+            <TimeList>
+                {timeArr}
+            </TimeList>
         </div>
-
-
     )
 }
-export default App
+
+export default App;
