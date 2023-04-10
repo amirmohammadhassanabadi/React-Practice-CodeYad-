@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import TimeList from './TimeList';
+import { TestContext } from './TestContex';
 
 let interval;
 
@@ -13,6 +14,8 @@ class Timer extends React.Component {
             isStart: false
         }
     }
+
+    static contextType = TestContext;
 
     startWatch = () => {
         if (this.state.isStart === false) {
@@ -76,8 +79,8 @@ class Timer extends React.Component {
                         Reset
                     </button>
                     <button onClick={this.props.themeHandler} style={{
-                        backgroundColor: this.props.isLight ? "#354047" : "whitesmoke",
-                        color: this.props.isLight ? "whitesmoke" : "#000"
+                        backgroundColor: this.props.isLight ? "#354047" : this.context ,
+                        color: this.props.isLight ? this.context : "#000"
                     }}>
                         {this.props.isLight ? "Dark Mode" : "Light Mode"}
                     </button>

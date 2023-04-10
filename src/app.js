@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Hello from './Hello';
 import Timer from './Timer';
 import TimeList from './TimeList';
+import { TestContext } from './TestContex';
 
 const App = () => {
     const [title, setTitle] = useState("Hello, World");
@@ -25,6 +26,7 @@ const App = () => {
     }
 
     return (
+        <TestContext.Provider value="whitesmoke">
         <div className='wrapper' style={{
             backgroundColor: isLight ? "#c5c5c5" : "#3f474b"
         }}>
@@ -39,6 +41,7 @@ const App = () => {
                 {timeArr}
             </TimeList>
         </div>
+        </TestContext.Provider>
     )
 }
 
