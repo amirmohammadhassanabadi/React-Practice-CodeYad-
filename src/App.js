@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Hello from './Hello';
 import Timer from './Timer';
+import TimeList from './TimeList';
 
 const App = () => {
     const [title, setTitle] = useState("Hello, World");
     const [isLight, setLight] = useState(false);
+    const [timeArr, setTimeArr] = useState([]);
+
+    const timeListHandler = () => {
+        setTimeArr([... timeArr, document.querySelector(".clock").children[0].innerHTML])
+    }
 
     const titleHandler = () => {
         if (title == "React Course") {
@@ -14,20 +20,24 @@ const App = () => {
         }
     }
 
-    useEffect(()=>{
-        console.log("useEffect");
-    }, [isLight])
-
-    const themeHandler = ()=>{
+    const themeHandler = () => {
         setLight(!isLight);
     }
 
     return (
         <div className='wrapper' style={{
-            backgroundColor: isLight ? "#c5c5c5": "#3f474b" 
+            backgroundColor: isLight ? "#c5c5c5" : "#3f474b"
         }}>
             <Hello title={title} />
-            <Timer titleHandler={titleHandler} themeHandler={themeHandler} isLight={isLight}/>
+            <Timer
+                titleHandler={titleHandler}
+                themeHandler={themeHandler}
+                isLight={isLight}
+                timeListHandler={timeListHandler}
+                />
+            <TimeList>
+                {timeArr}
+            </TimeList>
         </div>
     )
 }

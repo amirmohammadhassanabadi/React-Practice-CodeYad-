@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import TimeList from './TimeList';
 
 let interval;
 
@@ -33,7 +34,7 @@ class Timer extends React.Component {
         }
     }
 
-    resetWatch = ()=>{
+    resetWatch = () => {
         this.stopWatch();
         this.setState({
             sec: 0,
@@ -48,7 +49,7 @@ class Timer extends React.Component {
                 sec: 0,
                 min: this.state.min + 1
             })
-        }else if(this.state.min === 60){
+        } else if (this.state.min === 60) {
             this.setState({
                 min: 0,
                 hr: this.state.hr + 1
@@ -59,9 +60,9 @@ class Timer extends React.Component {
     render() {
         return (
             <Fragment>
-                <div className='clock'>
+                <div className='clock' onClick={this.props.timeListHandler}>
                     <h1>
-                        {`${this.state.hr > 9 ? this.state.hr: "0" + this.state.hr} : ${this.state.min > 9 ? this.state.min : "0" + this.state.min} : ${this.state.sec > 9 ? this.state.sec : "0" + this.state.sec}`}
+                        {`${this.state.hr > 9 ? this.state.hr : "0" + this.state.hr} : ${this.state.min > 9 ? this.state.min : "0" + this.state.min} : ${this.state.sec > 9 ? this.state.sec : "0" + this.state.sec}`}
                     </h1>
                 </div>
                 <div>
@@ -80,6 +81,7 @@ class Timer extends React.Component {
                     }}>
                         {this.props.isLight ? "Dark Mode" : "Light Mode"}
                     </button>
+                    <br />
                 </div>
             </Fragment>
         )
