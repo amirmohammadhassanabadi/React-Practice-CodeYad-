@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import Item from "./Item";
+import { TestContext } from "./TestContex";
 
-const TimeList = (prop) => {
+const TimeList = () => {
+    let context = useContext(TestContext)
     return (
         <div className="timelist-wrapper">
-            {prop.children.map((c) => (
+            {context.timeArr.map((c) => (
                 <Item key={Math.random()}>
                     {c}
                 </Item>

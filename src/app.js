@@ -26,7 +26,11 @@ const App = () => {
     }
 
     return (
-        <TestContext.Provider value="whitesmoke">
+        <TestContext.Provider value={{
+            timeArr ,
+             setTimeArr
+        }
+        }>
         <div className='wrapper' style={{
             backgroundColor: isLight ? "#c5c5c5" : "#3f474b"
         }}>
