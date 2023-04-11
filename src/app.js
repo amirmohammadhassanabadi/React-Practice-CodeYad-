@@ -1,51 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import Hello from './Hello';
-import Timer from './Timer';
-import TimeList from './TimeList';
-import { TestContext } from './TestContex';
+import React from 'react';
 
 const App = () => {
-    const [title, setTitle] = useState("Hello, World");
-    const [isLight, setLight] = useState(false);
-    const [timeArr, setTimeArr] = useState([]);
-
-    const timeListHandler = () => {
-        setTimeArr([... timeArr, document.querySelector(".clock").children[0].innerHTML])
-    }
-
-    const titleHandler = () => {
-        if (title == "React Course") {
-            setTitle("Hello, World")
-        } else {
-            setTitle("React Course")
-        }
-    }
-
-    const themeHandler = () => {
-        setLight(!isLight);
-    }
-
     return (
-        <TestContext.Provider value={{
-            timeArr ,
-             setTimeArr
-        }
-        }>
-        <div className='wrapper' style={{
-            backgroundColor: isLight ? "#c5c5c5" : "#3f474b"
-        }}>
-            <Hello title={title} />
-            <Timer
-                titleHandler={titleHandler}
-                themeHandler={themeHandler}
-                isLight={isLight}
-                timeListHandler={timeListHandler}
-                />
-            <TimeList>
-                {timeArr}
-            </TimeList>
+        <div className="container">
+            <div className='row d-flex justify-content-center'>
+                <div className='col-md-10 col-lg-8 col-xl-6'>
+                    <div className='wrapper text-center p-3 my-4'>
+                        <h1 className='text-info my-2'>
+                            Wellcome to React 
+                        </h1>
+                        <form action='#' className='d-flex my-4'>
+                            <input type='text' className='form-control me-1'></input>
+                            <input type='submit' className='btn btn-info'></input>
+                        </form>
+                        <div className='w-100 p-3 bg-dark d-flex justify-content-between mb-1'>
+                            <span className='text-light'>
+                                First Job
+                            </span>
+                            <div className='icon-wrapper d-flex justify-content-between'>
+                            <i className='fa fa-check text-success'></i>
+                            <i className='fa fa-times text-info'></i>
+                            <i className='fa fa-trash text-danger'></i>
+                            </div>
+                        </div>
+                        <div className='w-100 p-3 bg-dark d-flex justify-content-between mb-1'>
+                            <span className='text-light'>
+                                Second Job
+                            </span>
+                            <div className='icon-wrapper d-flex justify-content-between'>
+                            <i className='fa fa-check text-success'></i>
+                            <i className='fa fa-times text-info'></i>
+                            <i className='fa fa-trash text-danger'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        </TestContext.Provider>
     )
 }
 
