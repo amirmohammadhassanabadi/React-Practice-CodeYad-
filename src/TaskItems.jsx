@@ -11,6 +11,10 @@ const TaskItems = () => {
         setTaskItem(newTaskItem);
     }
 
+    const deleteTask = (id)=>{
+        setTaskItem(taskItem.filter(e => e.id != id));
+    }
+
     if (taskItem.length > 0) {
         return (
             <ul className="list-group">
@@ -24,7 +28,7 @@ const TaskItems = () => {
 
                                     <i className={`${e.isDone ? "fa fa-times text-warning shadow_warning" : "fa fa-check text-info shadow_info"}`} onClick={()=>{changeTask(e.id)}}></i>
 
-                                <i className='fa fa-trash text-danger'></i>
+                                <i className='fa fa-trash text-danger' onClick={()=>{deleteTask(e.id)}}></i>
                             </span>
                         </li>
                     ))

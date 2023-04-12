@@ -7,7 +7,6 @@ const TopForm = () => {
 
     const inputTaskHandler = (e) => {
         setTask(e.target.value);
-        console.log(task);
     }
 
     const saveTask = (e) => {
@@ -17,6 +16,8 @@ const TopForm = () => {
             title: task,
             isDone: false
         }])
+        e.target.parentElement.children[0].value = "";
+        setTask("");
     }
 
     return (
