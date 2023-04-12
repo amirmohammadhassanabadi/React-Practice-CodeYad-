@@ -3,6 +3,14 @@ import { TaskContext } from "./TaskContext";
 
 const TaskItems = () => {
     let { taskItem, setTaskItem } = useContext(TaskContext);
+
+    const changeTask = (id)=>{
+        let index = taskItem.findIndex(e => e.id == id)
+        let newTaskItem = [...taskItem];
+        newTaskItem[index].isDone = !newTaskItem[index].isDone;
+        setTaskItem(newTaskItem);
+    }
+
     if (taskItem.length > 0) {
         return (
             <ul className="list-group">
@@ -14,7 +22,7 @@ const TaskItems = () => {
                             </span>
                             <span className='icon-wrapper d-flex justify-content-between'>
                                 {
-                                    e.isDone ? <i className='fa fa-times text-warning shadow_warning'></i> : <i className='fa fa-check text-info shadow_info'></i>
+                                    e.isDone ? <i className='fa fa-times text-warning shadow_warning' onClick={()=>{changeTask(e.id)}}></i> : <i className='fa fa-check text-info shadow_info' onClick={()=>{changeTask(e.id)}}></i>
                                 }
                                 <i className='fa fa-trash text-danger'></i>
                             </span>
