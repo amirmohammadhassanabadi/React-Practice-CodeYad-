@@ -21,9 +21,9 @@ const TaskItems = () => {
                                 {e.title}
                             </span>
                             <span className='icon-wrapper d-flex justify-content-between'>
-                                {
-                                    e.isDone ? <i className='fa fa-times text-warning shadow_warning' onClick={()=>{changeTask(e.id)}}></i> : <i className='fa fa-check text-info shadow_info' onClick={()=>{changeTask(e.id)}}></i>
-                                }
+
+                                    <i className={`${e.isDone ? "fa fa-times text-warning shadow_warning" : "fa fa-check text-info shadow_info"}`} onClick={()=>{changeTask(e.id)}}></i>
+
                                 <i className='fa fa-trash text-danger'></i>
                             </span>
                         </li>
