@@ -4,18 +4,19 @@ import Pure from './Pure';
 class Parent extends React.Component {
     constructor() {
         super();
-        this.componentRef = createRef()
+        this.myInput= createRef()
     }
 
-    changeComponent = ()=>{
-        this.componentRef.current.changeName();
+    componentDidMount(){
+        this.myInput.current.focus()
+        console.log(this.myInput);
     }
 
     render() {
         return (
             <Fragment>
                 <div>
-                    <Pure ref={this.componentRef} />
+                    <Pure ref={this.myInput} />
                 </div>
                 <button className='btn btn-light' onClick={this.changeComponent}>Test</button>
             </Fragment>
