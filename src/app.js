@@ -10,8 +10,10 @@ const App = () => {
 
     return (
         <div>
-            <SideBar />
-            <Content />
+            <MainContext.Provider value={{ showMenu, setShowMenu }}>
+                <SideBar />
+                <Content />
+            </MainContext.Provider>
         </div>
     )
 }

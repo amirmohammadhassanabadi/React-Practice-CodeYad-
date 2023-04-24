@@ -9,7 +9,7 @@ const SideBar = () => {
     const { showMenu, setShowMenu } = useContext(MainContext)
 
     return (
-        <div className={`${style.sidebar_section} bg-secondary`}>
+        <div className={`${style.sidebar_section} bg-secondary`} style={showMenu ? {right: 0} : {}}>
             <div>
                 <ul className={`${style.sidebar_list} m-0 p-0`}>
                     <li className={style.sidebar_avatar}>
