@@ -1,18 +1,20 @@
-import React from 'react';
-import Parent from './Parent';
+import React, { useState } from 'react';
+import Content from './Content';
+import { MainContext } from './contexts/MainContext'
+import Side from './Sidebar';
+import SideBar from './Sidebar';
 
 const App = () => {
+
+    const [showMenu, setShowMenu] = useState(false);
+
     return (
-        <div className="container">
-            <div className='row d-flex justify-content-center'>
-                <div className='col-md-10 col-lg-8 col-xl-6'>
-                    <div className='wrapper text-center p-3 my-4'>
-                        <Parent/>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <SideBar />
+            <Content />
         </div>
     )
 }
+
 
 export default App;
